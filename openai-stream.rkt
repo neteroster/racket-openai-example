@@ -53,7 +53,8 @@
 
   (define-values (status response body)
     (let ([openai-base (hash-ref openai-config 'openai-base)]
-          [openai-uri (hash-ref openai-config 'openai-uri)])
+          [openai-uri (hash-ref openai-config 'openai-uri)]
+          [api-key (hash-ref openai-config 'api-key)])
       (http-sendrecv openai-base openai-uri
                      #:data data
                      #:method "POST"
